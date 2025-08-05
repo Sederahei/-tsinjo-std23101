@@ -1,9 +1,8 @@
 package dev.examen.tsinjo.entity;
 
 import jakarta.persistence.*;
-import lombok.*;
-
 import java.time.Instant;
+import lombok.*;
 
 @Entity
 @Data
@@ -11,21 +10,22 @@ import java.time.Instant;
 @AllArgsConstructor
 @Builder
 public class Payment {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
 
-    private String pspType; // e.g. "ORANGE_MONEY"
-    private String pspPaymentId;
+  private String pspType; // e.g. "ORANGE_MONEY"
+  private String pspPaymentId;
 
-    private Integer amount; // en ariary ou centimes ?
-    private Instant creationDate;
+  private Integer amount; // en ariary ou centimes ?
+  private Instant creationDate;
 
-    @Enumerated(EnumType.STRING)
-    private VerificationStatus status;
+  @Enumerated(EnumType.STRING)
+  private VerificationStatus status;
 
-    public enum VerificationStatus {
-        VERIFYING, SUCCEEDED, FAILED
-    }
+  public enum VerificationStatus {
+    VERIFYING,
+    SUCCEEDED,
+    FAILED
+  }
 }
-

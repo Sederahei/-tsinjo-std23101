@@ -9,12 +9,11 @@ import lombok.*;
 @AllArgsConstructor
 @Builder
 public class Student {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
 
-    private String firstName;
-    private String lastName;
-    private String email;
+  private String firstName;
+  private String lastName;
+  private String email;
 }
-

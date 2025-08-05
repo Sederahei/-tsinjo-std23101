@@ -1,8 +1,8 @@
 package dev.examen.tsinjo.entity;
-import jakarta.persistence.*;
-import lombok.*;
 
+import jakarta.persistence.*;
 import java.time.Instant;
+import lombok.*;
 
 @Entity
 @Data
@@ -10,15 +10,14 @@ import java.time.Instant;
 @AllArgsConstructor
 @Builder
 public class Donation {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
 
-    private Instant date;
+  private Instant date;
 
-    @ManyToOne
-    private Donor donor;
+  @ManyToOne private Donor donor;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    private Payment payment;
+  @OneToOne(cascade = CascadeType.ALL)
+  private Payment payment;
 }

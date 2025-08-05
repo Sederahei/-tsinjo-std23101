@@ -1,9 +1,8 @@
 package dev.examen.tsinjo.entity;
 
 import jakarta.persistence.*;
-import lombok.*;
-
 import java.util.List;
+import lombok.*;
 
 @Entity
 @Data
@@ -11,13 +10,13 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 public class Beneficiary {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
 
-    private String email;
-    private String fullName;
+  private String email;
+  private String fullName;
 
-    @OneToMany(mappedBy = "beneficiary", cascade = CascadeType.ALL)
-    private List<Help> helps;
+  @OneToMany(mappedBy = "beneficiary", cascade = CascadeType.ALL)
+  private List<Help> helps;
 }
