@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Liste des dons</title>
+</head>
+<body>
+<h1>Liste des dons</h1>
+<table border="1">
+    <thead>
+    <tr>
+        <th>Nom</th>
+        <th>Téléphone</th>
+        <th>Email</th>
+        <th>Montant</th>
+        <th>Status</th>
+        <th>PSP Payment ID</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="don : ${dons}">
+        <td th:text="${don.nom}">Nom</td>
+        <td th:text="${don.telephone}">Téléphone</td>
+        <td th:text="${don.email}">Email</td>
+        <td th:text="${don.montant}">Montant</td>
+        <td th:text="${don.status}">Status</td>
+        <td th:text="${don.pspPaymentId}">PSP ID</td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
